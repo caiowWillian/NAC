@@ -1,0 +1,61 @@
+﻿@model IEnumerable<NAC.Models.Nota>
+@{
+    ViewBag.Title = "Lista";
+}
+
+<table class="table table-bordered table-condensed table-responsive table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(m => m.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.Rm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.Nac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.Am)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.Ps)
+        </th>
+        <th>
+            Editar
+        </th>
+        <th>
+            Excluir
+        </th>
+    </tr>
+    
+    @foreach(var item in Model)
+    {
+
+        <tr>
+            <td>
+                @Html.DisplayFor(m => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(m => item.Rm)
+            </td>
+            <td>
+                @Html.DisplayFor(m => item.Nac)
+            </td>
+            <td>
+                @Html.DisplayFor(m => item.Am)
+            </td>
+            <td>
+                @Html.DisplayFor(m => item.Ps)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit","Nota")?Rm=@item.Rm">Editar</a>
+            </td>
+            <td>
+                <a href="@Url.Action("Delete","Nota")?Rm=@item.Rm">Excluir</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<h2>Lista</h2>
+

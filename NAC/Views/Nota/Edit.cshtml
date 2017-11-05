@@ -1,0 +1,48 @@
+﻿@model NAC.Models.Nota
+@{
+    ViewBag.Title = "Edit";
+}
+
+@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+<h2>Create</h2>
+
+<div class="container">
+
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(m => m.Rm)
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Nome)
+            @Html.TextBoxFor(m => m.Nome, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Nome, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Rm)
+            @Html.TextBoxFor(m => m.Rm, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Rm, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Nac)
+            @Html.TextBoxFor(m => m.Nac, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Nac, "", new { @class = "text-gander" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Am)
+            @Html.TextBoxFor(m => m.Am, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Am, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Ps)
+            @Html.TextBoxFor(m => m.Ps, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Ps, "", new { @class = "text-danger" })
+        </div>
+
+        <button type="submit" class="btn btn-default">Cadastrar</button>
+    }
+</div>
+
